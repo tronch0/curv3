@@ -12,7 +12,7 @@ func TestFullFlow_Secp256k1(t *testing.T) {
 	privateKey := NewPrivateKey(secp256k1.GetSecp256k1(), secretKey)
 
 	// sign
-	msgToSign := "Heyy"
+	msgToSign := "Hey"
 	sig := Sign(privateKey, msgToSign, secp256k1.GetSecp256k1())
 
 	// verify
@@ -29,7 +29,7 @@ func TestFullFlow_P256(t *testing.T) {
 	privateKey := NewPrivateKey(P256.GetP256(), secretKey)
 
 	// sign
-	msgToSign := "Heyy"
+	msgToSign := "Hey"
 	sig := Sign(privateKey, msgToSign, P256.GetP256())
 
 	// verify
@@ -46,7 +46,7 @@ func TestDiffPublicKeyVerification(t *testing.T) {
 	privateKey := NewPrivateKey(secp256k1.GetSecp256k1(), secretKey)
 
 	// sign
-	msgToSign := "Heyy"
+	msgToSign := "Hey"
 	sig := Sign(privateKey, msgToSign, secp256k1.GetSecp256k1())
 
 	// verify

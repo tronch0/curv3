@@ -15,6 +15,6 @@ func TestPublicKeyGeneration(t *testing.T) {
 	expectedPK := g.ScalarMul(privateKey.Key)
 
 	if publicKey.Equal(expectedPK) == false {
-		t.Fatal("the assertion has failed")
+		t.Fatal("assertion has failed")
 	}
 }

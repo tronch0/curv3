@@ -49,7 +49,6 @@ func TestVerication(t *testing.T) {
 
 }
 
-// to update parameters
 func TestVerication2(t *testing.T) {
 
 	x, ok := new(big.Int).SetString("887387e452b8eacc4acfde10d9aaf7f6d9a0f975aabb10d006e4da568744d06c", 16)

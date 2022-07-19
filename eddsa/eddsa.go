@@ -1,14 +1,9 @@
 package eddsa
 
-import (
-	"github.com/tronch0/curv3/eddsa/point"
-	"math/big"
-)
-
-type Signature struct {
-	R *point.Point
-	S *big.Int
-}
+//type Signature struct {
+//	R *point.Point
+//	S *big.Int
+//}
 
 // good resources
 // https://github.com/warner/python-pure25519/blob/master/pure25519/basic.py#L261
