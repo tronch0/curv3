@@ -51,8 +51,8 @@ func newSecp256k1() *Secp256k1 {
 	return &Secp256k1{
 		n:      N,
 		p:      p,
-		a:      field.New(a, p),
-		b:      field.New(b, p),
+		a:      ffA,
+		b:      ffB,
 		gPoint: gP,
 	}
 }

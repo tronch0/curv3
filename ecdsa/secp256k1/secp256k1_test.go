@@ -1,7 +1,6 @@
 package secp256k1
 
 import (
-	"fmt"
 	"github.com/tronch0/crypt0/field"
 	"github.com/tronch0/curv3/ecdsa"
 	"github.com/tronch0/curv3/ecdsa/point"
@@ -45,8 +44,10 @@ func TestVerication(t *testing.T) {
 
 	sig := &ecdsa.Signature{R: r, S: s}
 	res := ecdsa.Verify(p1, z, sig, GetSecp256k1())
-	fmt.Println(res)
 
+	if res == false {
+		t.FailNow()
+	}
 }
 
 func TestVerication2(t *testing.T) {
@@ -85,6 +86,8 @@ func TestVerication2(t *testing.T) {
 
 	sig := &ecdsa.Signature{R: r, S: s}
 	res := ecdsa.Verify(p1, z, sig, GetSecp256k1())
-	fmt.Println(res)
 
+	if res == false {
+		t.FailNow()
+	}
 }

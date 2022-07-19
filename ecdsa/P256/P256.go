@@ -58,8 +58,8 @@ func newP256Defs() *P256 {
 	return &P256{
 		n:      N,
 		p:      p,
-		a:      field.New(a, p),
-		b:      field.New(b, p),
+		a:      ffA,
+		b:      ffB,
 		gPoint: gP,
 	}
 }

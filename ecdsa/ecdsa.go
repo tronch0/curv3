@@ -19,10 +19,10 @@ func Sign(pk *PrivateKey, msgToSign string, defs curv3.EcdsaCurve) *Signature {
 	r := defs.GetG().ScalarMul(k).GetX().GetNum()
 	kInverse := new(big.Int).ModInverse(k, defs.GetN())
 
-	interS := new(big.Int).Mul(r, e)
-	interS = new(big.Int).Add(interS, z)
-	interS = new(big.Int).Mul(interS, kInverse)
-	s := new(big.Int).Mod(interS, defs.GetN())
+	s := new(big.Int).Mul(r, e)
+	s = new(big.Int).Add(s, z)
+	s = new(big.Int).Mul(s, kInverse)
+	s = new(big.Int).Mod(s, defs.GetN())
 
 	return &Signature{R: r, S: s}
 }
