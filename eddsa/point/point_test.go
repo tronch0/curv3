@@ -53,7 +53,7 @@ package point
 //			d,                                   // d
 //		)
 //
-//		product := p1.ScalarMul(testData[i].coef)
+//		product := p1.Mul(testData[i].coef)
 //		if product.Equal(expectedRes) == false {
 //			t.Fatal("assert result error")
 //		}

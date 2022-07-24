@@ -12,7 +12,7 @@ func TestPublicKeyGeneration(t *testing.T) {
 	publicKey := privateKey.PublicKey
 
 	g := secp256k1.GetSecp256k1().GetG()
-	expectedPK := g.ScalarMul(privateKey.Key)
+	expectedPK := g.Mul(privateKey.Key)
 
 	if publicKey.Equal(expectedPK) == false {
 		t.Fatal("assertion has failed")

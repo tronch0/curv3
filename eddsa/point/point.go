@@ -58,7 +58,7 @@ package point
 //
 //	// a / b = x_3
 //	bInverse := new(big.Int).ModInverse(b, p.x.GetOrder())
-//	x := a.ScalarMul(bInverse)
+//	x := a.Mul(bInverse)
 //
 //	// c / d = y_3
 //	dInverse := new(big.Int).ModInverse(d, p.x.GetOrder())
@@ -72,7 +72,7 @@ package point
 //	}
 //}
 //
-//func (p *Point) ScalarMul(coef *big.Int) *Point {
+//func (p *Point) Mul(coef *big.Int) *Point {
 //	a := new(big.Int).Set(p.a)
 //	d := new(big.Int).Set(p.d)
 //

@@ -286,7 +286,7 @@ func TestScalarMul(t *testing.T) {
 			field.New(b, p),               // b
 		)
 
-		product := p1.ScalarMul(testData[i].coef)
+		product := p1.Mul(testData[i].coef)
 
 		var expectedRes *Point
 		if testData[i].expectedX == nil {

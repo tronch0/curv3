@@ -12,13 +12,13 @@ type PrivateKey struct {
 	PublicKey *point.Point     `json:"public_key"`
 }
 
-func NewPrivateKey(defs curv3.EcdsaCurve, k *big.Int) *PrivateKey {
-	gP := defs.GetG()
-	k = new(big.Int).Mod(k, defs.GetN())
+func NewPrivateKey(c curv3.EcdsaCurve, d *big.Int) *PrivateKey {
+	gP := c.GetG()
+	d = new(big.Int).Mod(d, c.GetN())
 
 	return &PrivateKey{
-		Curve:     defs,
-		PublicKey: gP.ScalarMul(k),
-		Key:       k,
+		Curve:     c,
+		PublicKey: gP.Mul(d),
+		Key:       d,
 	}
 }

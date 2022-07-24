@@ -36,7 +36,7 @@ package eddsa
 //
 //	fmt.Printf("%x\n", sk.Bytes())
 //	defs := ed25519.GetEd25519()
-//	pkPoint := defs.GetG().ScalarMul(sk)
+//	pkPoint := defs.GetG().Mul(sk)
 //	pk := pkPoint.GetY().GetNum().Bytes()
 //	//fmt.Println(pk)
 //	changeEndianness(&pk)

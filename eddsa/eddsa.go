@@ -23,7 +23,7 @@ package eddsa
 //	//r := new(big.Int).Mod(new(big.Int).SetBytes(privAndMsgHash), curve.GetP())
 //	//
 //	////   R = r * G
-//	//R := curve.GetG().ScalarMul(r)
+//	//R := curve.GetG().Mul(r)
 //	//
 //	////  h = hash(R + pubKey + msg) mod q
 //	//preImage := append(R.GetX().GetNum().Bytes(), priv.PublicKey.GetX().GetNum().Bytes()...)
@@ -49,7 +49,7 @@ package eddsa
 //	hDigest := sha512.New().Sum(preImage)
 //	h := new(big.Int).Mod(new(big.Int).SetBytes(hDigest), curve.GetP())
 //	//  P1 = s * G
-//	p1 := curve.GetG().ScalarMul(sig.S)
+//	p1 := curve.GetG().Mul(sig.S)
 //
 //	// P2 = R + h * pubKey
 //	p2 := new(big.Int).Mod(bigint.Mul(h, publicKey.GetX().GetNum()), curve.GetP())

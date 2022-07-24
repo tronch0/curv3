@@ -89,19 +89,19 @@ func (p *Point) Add(p2 *Point) *Point {
 	}
 }
 
-func (p *Point) ScalarMul(coef *big.Int) *Point {
+func (p *Point) Mul(scalar *big.Int) *Point {
 	a := field.Clone(p.a)
 	b := field.Clone(p.b)
 
 	curr := Clone(p)
 	res := New(nil, nil, a, b)
 
-	for coef.Cmp(big.NewInt(0)) > 0 {
-		if coef.Bit(0) == 1 {
+	for scalar.Cmp(big.NewInt(0)) > 0 {
+		if scalar.Bit(0) == 1 {
 			res = res.Add(curr)
 		}
 		curr = curr.Add(curr)
-		coef = new(big.Int).Rsh(coef, 1)
+		scalar = new(big.Int).Rsh(scalar, 1)
 	}
 
 	return res

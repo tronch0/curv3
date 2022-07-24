@@ -59,7 +59,7 @@ package eddsa
 //
 //func privateToPublic(priv *big.Int, defs curv3.EdwardsCurve) *big.Int {
 //	// treat it as d scalar and multipli with G
-//	pkPoint := defs.GetG().ScalarMul(priv)
+//	pkPoint := defs.GetG().Mul(priv)
 //
 //	// take Y coor of the public point
 //	pk := new(big.Int).Set(pkPoint.GetY().GetNum())
